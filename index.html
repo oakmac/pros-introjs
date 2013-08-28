@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 <head>
-  <title>Intro to JS 2013 - Chris Oakman</title>
+  <title>Intro to JavaScript, August 2013 - Chris Oakman</title>
   <meta charset='utf-8'>
   <!-- <script src='http://html5slides.googlecode.com/svn/trunk/slides.js'></script> -->
   <script src="js/slides.js"></script>
@@ -16,6 +16,11 @@
   .small2 {
     font-size: 18px !important;
   }
+  .further-reading img {
+    height: 80px;
+    vertical-align: middle;
+
+  }
   </style> 
 </head>
 <body style='display: none'>
@@ -23,7 +28,7 @@
 
 
 <article>
-<h1>Intro to JS</h1>
+<h1>Intro to JavaScript</h1>
 <p>Chris Oakman
   <br />
   August 2013
@@ -36,7 +41,7 @@
 <ul>
   <li>Part I: JavaScript 101
   <li>Part II: Tips from the Trenches
-  <li>Part III: Unsolicited Advice
+  <li>Further Reading
   <li>Q&amp;A
 </ul>
 </article>
@@ -513,7 +518,7 @@ printThis.apply( { foo : "Inception!" } ); // "Inception!"
 <h3>Lesson 4 - Object Inheritance</h3>
 <ul>
   <li>All objects are linked to a prototype object
-  <li>When accessing a property on an object, JS will look up the prototype chain until it bottoms out at Object.prototype
+  <li>When accessing a property on an object, JS will look up the prototype chain until it tops out at <code>Object.prototype</code>
 </ul>
 </article>
 
@@ -654,7 +659,7 @@ window.MYAPP = window.MYAPP || {};
 <article class="smaller">
 <h3>L05E02 - What is the DOM?</h3>
 <ul>
-  <li>The DOM is what it sounds like: Document Object Model
+  <li>The DOM is what it sounds like: <strong>D</strong>ocument <strong>O</strong>bject <strong>M</strong>odel
   <li>It's the browser exposing the underlying document structure through JavaScript objects
 </ul>
 <section>
@@ -727,7 +732,7 @@ var el = document.getElementById("pets");
 el.style.color = "blue";
 
 // use a library instead
-$('div#pets').css('color', 'blue');
+$('#pets').css('color', 'blue');
 </pre>
 </div>
 <div style="clear: both"></div>
@@ -900,154 +905,26 @@ el.onclick = function(event) {
 
 
 <article class="smaller">
-<h3 style="margin-bottom: 40px;">Page Layout Recommendation</h3>    
-<h3>Development</h3>
-<pre style="margin-top: 20px; margin-bottom: 20px">
-&lt;!-- in the head --&gt;
-&lt;link rel="stylesheet" href="css/base.css" /&gt;
-&lt;link rel="stylesheet" href="css/main.css" /&gt;
-
-&lt;!-- at the bottom --&gt;
-&lt;script src="js/library.js"&gt;&lt;/script&gt;
-&lt;script src="js/global.js"&gt;&lt;/script&gt;
-&lt;script src="js/page.js"&gt;&lt;/script&gt;
-</pre>
-
-<h3>Production</h3>
-<pre style="margin-top: 20px; margin-bottom: 20px">
-&lt;!-- in the head --&gt;
-&lt;link rel="stylesheet" href="css/base-main.ea765ced3a.css" /&gt;
-
-&lt;!-- at the bottom --&gt;
-&lt;script src="js/library-global.0d177de34b.js"&gt;&lt;/script&gt;
-&lt;script src="js/page.f8161f056f.js"&gt;&lt;/script&gt;
-</pre>
-</article>
-
-
-<article class="smaller">
-<h3>Application JavaScript Structure</h3>
-<p>For most web sites / applications:</p>
-<ul>
-  <li>Create a global namespace for your application.
-  <li>Put universally needed functions in your global, include on every page
-  <li>Put page-specific JavaScript in the module pattern and "export" out event handlers
-  <li>Rename files on publish to bust cache
-</ul>
-<h4>UltimateCentral.com demo</h4>
-</article>
-
-
-<article class="smaller">
 <h3>Misc Recommended</h3>
 <p>Strongly recommended from personal experience.</p>
-<ul>
-  <li>Declare functions as <code>var foo = function() { ... };</code>
-  <li>Use a CSS reset
-  <li>Use Google Closure Linter and the Google Style Guide
-  <li>Have a one-step build / deploy process
-  <li>Develop on a server
-  <li>When in doubt, be more explicit
-  <li>"Smart data structures and dumb code works a lot better than the other way around."
+<ul class="build">
+  <li>Use pure functions whereever possible
+  <li>Use a linter. I like the Google Closure Linter.
+  <li>camelCase for variable names (de facto JS convention)
+  <li>Avoid use of <code class="blue">this</code> where possible
+  <ul>
+    <li>It's invisible
+    <li>It's easy to use incorrectly
+    <li>You can never be 100% confident about what scope your function executes in (ie: <code>call</code>, <code>apply</code>)
+  </ul>
+  <li>Create a global namespace for your application: <code>var MYAPP = {};</code>
+  <li>One file per page, use the Module pattern
+  <li><code>buildThing()</code> convention for generating HTML
 </ul>
 </article>
 
 
 <article>
-<h1>Unsolicited Advice</h1>
-<p>Part III</p>
-</article>
-
-
-<article class="smaller">
-<h3>Professional Development</h3>
-<ul class="build">
-  <li>Prefer books over blogs
-  <ul style="margin-top: 12px">
-    <li>Zero barrier to entry for a blog post
-    <li>Author had to be recognized enough to be published
-    <li>Books are professionally edited
-    <li>Books have cohesive content
-  </ul>
-  <li style="margin-top: 40px">Prefer advice that has stood the test of time
-  <ul style="margin-top: 12px">
-    <li>Unix Philosophy
-    <li>The Mythical Man-Month (1975)
-    <li>Lessons from Communitree (1978)
-    <li>Better feature in 2005: Implement RSS or Faster Website?
-    <li>Better feature in 2012: Facebook Like Button or Faster Website?
-  </ul>
-</ul>
-</article>
-
-
-<article class="smaller">
-<h3>Professional Development <small>(cont.)</small></h3>
-<ul class="build">
-  <li>Prefer in-person networking to synthetic
-  <ul style="margin-top: 12px">
-    <li>Relationships are built in the flesh
-    <li>In-person communication is always more expressive than synthetic
-    <li>Life does not happen in a vaccuum
-    <li>Use new tools for communication, but <strong>build relationships</strong>
-  </ul>
-  <li style="margin-top: 40px">Prefer creation over consumption
-  <ul style="margin-top: 12px">
-    <li>Makes you learn faster
-    <li>Aim for quality, not quantity
-    <li>"when you don't create things, you become defined by your tastes rather than ability. your tastes only narrow and exclude people. so create."  -- why the lucky stiff
-  </ul>
-</ul>
-</article>
-
-
-<article class="smaller">
-<h3>Tools and Environment</h3>
-<p>The importance of tools and enviroment cannot be overstated.  <strong>Pick powerful tools and learn them well.</strong></p>
-<ul style="margin-top: 20px" class="build">
-  <li>Software
-  <ul style="margin-top: 12px">
-    <li>Text Editor
-    <li>Source Code Control
-    <li>Bug Tracker
-    <li>Build / Deploy Tools
-    <li>Which is the best software platform for your work?
-  </ul>
-  <li style="margin-top: 25px">Physical
-  <ul style="margin-top: 12px">
-    <li>Keyboard and mouse
-    <li>Typing speed
-    <li>Monitor size and pixel space
-    <li>Desk and chair
-    <li>Noise: headphones, earplugs, etc
-    <li>Lighting
-    <li>Sleep and caffeine
-  </ul>
-</ul>
-</article>
-
-
-<article class="smaller">
-<h3>Miscellaneous</h3>
-<ul class="build">
-  <li>Bugs are relative to time
-  <ul style="margin-top: 12px">
-    <li>A bug that was introduced 5 minutes ago is infinitely easier to fix than a bug introduced 5 months ago
-    <li>Plan this into your development process
-    <li>The time between developer eyeballs and user feedback should be as short as possible.
-  </ul>
-  <li style="margin-top: 40px">Meetings about software are mostly useless; often harmful
-  <ul style="margin-top: 12px">
-    <li>"If there had been a true consensus, you wouldn’t have had to have a consensus conference."
-    <li>Coercion is more likely to happen than consensus.
-    <li>Group dynamics govern meetings, but software needs specificity
-    <li>If you must have a meeting, put a hard timer on it (15min) or do it while physically standing up.
-  </ul>
-</ul>
-</article>
-
-
-<article class="">
   <h3>JavaScript People Worth Listening To</h3>
   <ul>
     <li>Douglas Crockford
@@ -1060,13 +937,14 @@ el.onclick = function(event) {
 </article>
 
 
-<article class="smaller">
+<article class="smaller further-reading">
 <h3>Further Reading</h3>
 <ul>
-  <li><img src="img/good_parts.jpg" alt="JavaScript: The Good Parts" style="vertical-align: middle" /> <a href="http://www.amazon.com/gp/product/0596517742/ref=as_li_ss_tl?ie=UTF8&amp;tag=oakmaccom-20&amp;linkCode=as2&amp;camp=1789&amp;creative=390957&amp;creativeASIN=0596517742" target="_blank">JavaScript: The Good Parts</a>
-  <li><img src="img/good_parts.jpg" alt="JavaScript: The Good Parts" style="vertical-align: middle" /> <a href="http://www.amazon.com/gp/product/0596517742/ref=as_li_ss_tl?ie=UTF8&amp;tag=oakmaccom-20&amp;linkCode=as2&amp;camp=1789&amp;creative=390957&amp;creativeASIN=0596517742" target="_blank">JavaScript: The Good Parts</a> (read it twice)
-  <li><img src="img/js_patterns.jpg" alt="JavaScript Patterns" style="vertical-align: middle" /> <a href="http://www.amazon.com/gp/product/0596806752/ref=as_li_ss_tl?ie=UTF8&amp;tag=oakmaccom-20&amp;linkCode=as2&amp;camp=1789&amp;creative=390957&amp;creativeASIN=0596806752" target="_blank">JavaScript Patterns</a>
-  <li><a href="http://www.html5rocks.com/en/tutorials/internals/howbrowserswork/" target="_blank">How Browsers Work</a>
+  <li><img src="img/good_parts.jpg" alt="JavaScript: The Good Parts" /> <a href="http://www.amazon.com/gp/product/0596517742/ref=as_li_ss_tl?ie=UTF8&amp;tag=oakmaccom-20&amp;linkCode=as2&amp;camp=1789&amp;creative=390957&amp;creativeASIN=0596517742" target="_blank">JavaScript: The Good Parts</a>
+  <li><img src="img/good_parts.jpg" alt="JavaScript: The Good Parts" /> <a href="http://www.amazon.com/gp/product/0596517742/ref=as_li_ss_tl?ie=UTF8&amp;tag=oakmaccom-20&amp;linkCode=as2&amp;camp=1789&amp;creative=390957&amp;creativeASIN=0596517742" target="_blank">JavaScript: The Good Parts</a> (read it twice)
+  <li><img src="img/js_patterns.jpg" alt="JavaScript Patterns" /> <a href="http://www.amazon.com/gp/product/0596806752/ref=as_li_ss_tl?ie=UTF8&amp;tag=oakmaccom-20&amp;linkCode=as2&amp;camp=1789&amp;creative=390957&amp;creativeASIN=0596806752" target="_blank">JavaScript Patterns</a>
+  <li><img src="img/effective-javascript.jpg" alt="Effective JavaScript" /> <a href="http://www.amazon.com/gp/product/0321812182/ref=as_li_ss_tl?ie=UTF8&amp;camp=1789&amp;creative=390957&amp;creativeASIN=0321812182&amp;linkCode=as2&amp;tag=oakmaccom-20" target="_blank">Effective JavaScript</a>
+  <li style="margin-top: 40px"><a href="http://www.html5rocks.com/en/tutorials/internals/howbrowserswork/" target="_blank">How Browsers Work</a>
   <li><a href="http://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml" target="_blank">Google JavaScript Style Guide</a>
   <li><a href="http://developer.yahoo.com/performance/" target="_blank">Yahoo! Exceptional Performance Team</a>
   <li><a href="http://www.youtube.com/watch?v=WxmcDoAxdoY" target="_blank">Paul Irish - Primitives of HTML5</a>
@@ -1079,8 +957,10 @@ el.onclick = function(event) {
   <p>Chris Oakman
   <br />
   <a href="mailto:chris@oakmac.com">chris@oakmac.com</a>
+  <br /><br />
+  <a href="http://oakmac.com/pros-introjs" target="_blank">http://oakmac.com/pros-introjs</a>
   <br />
-  <a href="https://github.com/oakmac/Professional-JavaScript">https://github.com/oakmac/Professional-JavaScript</a>
+  <a href="https://github.com/oakmac/pros-introjs" target="_blank">https://github.com/oakmac/pros-introjs</a>
 </article>
 
 
