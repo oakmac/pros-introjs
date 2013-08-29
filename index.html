@@ -39,8 +39,8 @@
 <article>
 <h3>Overview</h3>
 <ul>
-  <li>Part I: JavaScript 101
-  <li>Part II: Tips from the Trenches
+  <li>JavaScript 101
+  <li>Tips from the Trenches
   <li>Further Reading
   <li>Q&amp;A
 </ul>
@@ -57,7 +57,17 @@
 
 <article>
 <h1>JavaScript 101</h1>
-<p>Part I</p>
+</article>
+
+
+<article>
+<h3>What is JavaScript?</h3>
+<ul>
+  <li>Interpreted (as opposed to compiled)
+  <li>Dynamically typed (as opposed to static)
+  <li>Prototype-based
+  <li>Functions are first-class
+</ul>
 </article>
 
 
@@ -838,7 +848,6 @@ el.onclick = function(event) {
 
 <article>
 <h1>Tips From the Trenches</h1>
-<p>Part II</p>
 </article>
 
 
@@ -904,23 +913,38 @@ el.onclick = function(event) {
 </article>
 
 
-<article class="smaller">
+<article class="">
 <h3>Misc Recommended</h3>
 <p>Strongly recommended from personal experience.</p>
 <ul class="build">
-  <li>Use pure functions whereever possible
-  <li>Use a linter. I like the Google Closure Linter.
-  <li>camelCase for variable names (de facto JS convention)
+  <li>Use pure functions wherever possible
+  <li>Use a linter. I like the <a href="https://developers.google.com/closure/utilities/" target="_blank">Closure Linter</a>
+  <li><code>camelCase</code> for variable names (de facto JS convention)
   <li>Avoid use of <code class="blue">this</code> where possible
   <ul>
     <li>It's invisible
     <li>It's easy to use incorrectly
     <li>You can never be 100% confident about what scope your function executes in (ie: <code>call</code>, <code>apply</code>)
   </ul>
-  <li>Create a global namespace for your application: <code>var MYAPP = {};</code>
+</ul>
+</article>
+
+
+<article class="">
+<h3>Misc Recommended (cont.)</h3>
+<ul class="build">
+  <li>Create a global namespace for your application
+  <ul>
+    <li><code>window.MYAPP = window.MYAPP || {};</code>
+  </ul>
   <li>One file per page, use the Module pattern
   <li><code>buildThing()</code> convention for generating HTML
 </ul>
+</article>
+
+
+<article>
+<h1>Further Reading</h1>
 </article>
 
 
@@ -932,18 +956,17 @@ el.onclick = function(event) {
     <li>Stoyan Stefanov
     <li>Paul Irish
     <li>John Resig
-    <li>(bonus!) Bret Victor
   </ul>
 </article>
 
 
 <article class="smaller further-reading">
-<h3>Further Reading</h3>
+<h3>Books and References</h3>
 <ul>
   <li><img src="img/good_parts.jpg" alt="JavaScript: The Good Parts" /> <a href="http://www.amazon.com/gp/product/0596517742/ref=as_li_ss_tl?ie=UTF8&amp;tag=oakmaccom-20&amp;linkCode=as2&amp;camp=1789&amp;creative=390957&amp;creativeASIN=0596517742" target="_blank">JavaScript: The Good Parts</a>
   <li><img src="img/good_parts.jpg" alt="JavaScript: The Good Parts" /> <a href="http://www.amazon.com/gp/product/0596517742/ref=as_li_ss_tl?ie=UTF8&amp;tag=oakmaccom-20&amp;linkCode=as2&amp;camp=1789&amp;creative=390957&amp;creativeASIN=0596517742" target="_blank">JavaScript: The Good Parts</a> (read it twice)
-  <li><img src="img/js_patterns.jpg" alt="JavaScript Patterns" /> <a href="http://www.amazon.com/gp/product/0596806752/ref=as_li_ss_tl?ie=UTF8&amp;tag=oakmaccom-20&amp;linkCode=as2&amp;camp=1789&amp;creative=390957&amp;creativeASIN=0596806752" target="_blank">JavaScript Patterns</a>
   <li><img src="img/effective-javascript.jpg" alt="Effective JavaScript" /> <a href="http://www.amazon.com/gp/product/0321812182/ref=as_li_ss_tl?ie=UTF8&amp;camp=1789&amp;creative=390957&amp;creativeASIN=0321812182&amp;linkCode=as2&amp;tag=oakmaccom-20" target="_blank">Effective JavaScript</a>
+  <li><img src="img/js_patterns.jpg" alt="JavaScript Patterns" /> <a href="http://www.amazon.com/gp/product/0596806752/ref=as_li_ss_tl?ie=UTF8&amp;tag=oakmaccom-20&amp;linkCode=as2&amp;camp=1789&amp;creative=390957&amp;creativeASIN=0596806752" target="_blank">JavaScript Patterns</a>
   <li style="margin-top: 40px"><a href="http://www.html5rocks.com/en/tutorials/internals/howbrowserswork/" target="_blank">How Browsers Work</a>
   <li><a href="http://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml" target="_blank">Google JavaScript Style Guide</a>
   <li><a href="http://developer.yahoo.com/performance/" target="_blank">Yahoo! Exceptional Performance Team</a>
