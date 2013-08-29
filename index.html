@@ -990,5 +990,18 @@ el.onclick = function(event) {
 
 
 </section>
+<script>
+// a hack to fix the fact that prettyPrint thinks that "last" is a keyword
+window.setTimeout(function() {
+  if (! document.querySelectorAll) return;
+
+  var els = document.querySelectorAll('span.kwd');
+  for (var i = 0; i < els.length; i++) {
+    if (els[i].innerHTML !== 'last') continue;
+
+    els[i].className = 'pln';
+  }
+}, 1000);
+</script>
 </body>
 </html>
